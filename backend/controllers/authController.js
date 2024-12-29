@@ -167,7 +167,7 @@ const forgotPassword = async (req, res) => {
     await user.save();
 
     // 發送重置密碼郵件
-    const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
+    const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
     await sendResetEmail(email, resetUrl);
 
     res.json({ message: '重置密碼郵件已發送' });
