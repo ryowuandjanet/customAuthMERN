@@ -11,16 +11,7 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(
-  cors({
-    origin: [
-      process.env.FRONTEND_URL,
-      'https://你的網域.vercel.app',
-      // 如果有其他域名也要加入
-    ],
-    credentials: true,
-  }),
-);
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
