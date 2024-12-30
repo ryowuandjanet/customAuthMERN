@@ -25,7 +25,7 @@ const ResetPassword = () => {
 
     try {
       await axios.post(
-        `http://localhost:5000/api/auth/reset-password/${token}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/auth/reset-password/${token}`,
         {
           password: formData.password,
         },

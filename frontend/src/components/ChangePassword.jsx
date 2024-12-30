@@ -33,7 +33,7 @@ const ChangePassword = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        'http://localhost:5000/api/auth/change-password',
+        `${import.meta.env.VITE_BACKEND_URL}/api/auth/change-password`,
         {
           currentPassword: formData.currentPassword,
           newPassword: formData.newPassword,

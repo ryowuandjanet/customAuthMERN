@@ -17,10 +17,13 @@ const EmailVerification = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/verify-email', {
-        email,
-        code: verificationCode,
-      });
+      await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/auth/verify-email`,
+        {
+          email,
+          code: verificationCode,
+        },
+      );
       navigate('/login', { state: { message: '郵箱驗證成功，請登入' } });
     } catch (error) {
       setError(error.response?.data?.message || '驗證失敗');
