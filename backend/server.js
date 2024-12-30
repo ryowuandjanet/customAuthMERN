@@ -15,6 +15,7 @@ app.use(
   cors({
     origin: [
       'https://custom-auth-frontend.vercel.app',
+      'https://customauth-frontend.onrender.com',
       'http://localhost:5173', // 開發環境用
     ],
   }),
