@@ -17,9 +17,6 @@ app.use(
       'https://custom-auth-frontend.vercel.app',
       'http://localhost:5173', // 開發環境用
     ],
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
   }),
 );
 
