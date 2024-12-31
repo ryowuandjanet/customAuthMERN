@@ -13,13 +13,15 @@ connectDB();
 // Middleware
 app.use(
   cors({
-    origin: [
-      'https://custom-auth-frontend.vercel.app',
-      'https://customauth-frontend.onrender.com',
-      'http://localhost:5173', // 開發環境用
-    ],
+    origin: 'https://custom-auth-frontend.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
   }),
 );
+
+// 預檢請求的處理
+app.options('*', cors());
 
 // 確保 CORS 配置在其他中間件之前
 app.use(express.json());
